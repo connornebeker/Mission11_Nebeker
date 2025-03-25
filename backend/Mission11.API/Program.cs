@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using Mission11.API.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -22,6 +25,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors(x => x.WithOrigins("http://localhost:3000"));
 
 app.UseHttpsRedirection();
 
