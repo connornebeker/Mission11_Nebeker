@@ -1,6 +1,5 @@
 /Users/connornebeker/Desktop/Mission11_Nebeker/backend/Mission11.API/bin/Debug/net8.0/appsettings.Development.json
 /Users/connornebeker/Desktop/Mission11_Nebeker/backend/Mission11.API/bin/Debug/net8.0/appsettings.json
-/Users/connornebeker/Desktop/Mission11_Nebeker/backend/Mission11.API/bin/Debug/net8.0/Mission11.API.staticwebassets.endpoints.json
 /Users/connornebeker/Desktop/Mission11_Nebeker/backend/Mission11.API/bin/Debug/net8.0/Mission11.API
 /Users/connornebeker/Desktop/Mission11_Nebeker/backend/Mission11.API/bin/Debug/net8.0/Mission11.API.deps.json
 /Users/connornebeker/Desktop/Mission11_Nebeker/backend/Mission11.API/bin/Debug/net8.0/Mission11.API.runtimeconfig.json
@@ -122,9 +121,7 @@
 /Users/connornebeker/Desktop/Mission11_Nebeker/backend/Mission11.API/obj/Debug/net8.0/scopedcss/bundle/Mission11.API.styles.css
 /Users/connornebeker/Desktop/Mission11_Nebeker/backend/Mission11.API/obj/Debug/net8.0/staticwebassets.build.json
 /Users/connornebeker/Desktop/Mission11_Nebeker/backend/Mission11.API/obj/Debug/net8.0/staticwebassets.development.json
-/Users/connornebeker/Desktop/Mission11_Nebeker/backend/Mission11.API/obj/Debug/net8.0/staticwebassets.build.endpoints.json
 /Users/connornebeker/Desktop/Mission11_Nebeker/backend/Mission11.API/obj/Debug/net8.0/staticwebassets/msbuild.Mission11.API.Microsoft.AspNetCore.StaticWebAssets.props
-/Users/connornebeker/Desktop/Mission11_Nebeker/backend/Mission11.API/obj/Debug/net8.0/staticwebassets/msbuild.Mission11.API.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 /Users/connornebeker/Desktop/Mission11_Nebeker/backend/Mission11.API/obj/Debug/net8.0/staticwebassets/msbuild.build.Mission11.API.props
 /Users/connornebeker/Desktop/Mission11_Nebeker/backend/Mission11.API/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.Mission11.API.props
 /Users/connornebeker/Desktop/Mission11_Nebeker/backend/Mission11.API/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.Mission11.API.props

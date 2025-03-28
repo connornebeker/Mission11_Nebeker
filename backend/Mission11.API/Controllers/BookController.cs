@@ -16,7 +16,7 @@ public class BookController : ControllerBase
     }
 
     [HttpGet("AllBooks")]
-    public IActionResult GetBooks(int pageSize = 5, int pageNum = 1, string sortOrder = "asc")
+    public IActionResult GetBooks(int pageSize = 5, int pageNum = 1, string sortOrder = "asc", [FromQuery] List<string>? Categories = null)
     {
         var query = _context.Books.AsQueryable();
 
@@ -29,6 +29,11 @@ public class BookController : ControllerBase
         {
             query = query.OrderByDescending(b => b.Title);
         }
+
+        if (Categories != null && Categories.Any())
+        {
+            query = query.Where(c => Categories.Contains(c.Category));
+        }
         
         var books = query
             .Skip(pageSize * (pageNum - 1))
@@ -40,5 +45,16 @@ public class BookController : ControllerBase
         var result = new { Books = books, Total = total };
         
         return Ok(result);
+    }
+
+    [HttpGet("GetBookCategories")]
+    public IActionResult GetBookCategories()
+    {
+        var categories = _context.Books
+            .Select(c => c.Category)
+            .Distinct()
+            .ToList();
+        
+        return Ok(categories);
     }
 }

@@ -1,10 +1,24 @@
 import './App.css';
-import Booklist from './Booklist';
+import BooksPage from './pages/BooksPage';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import BuyPage from './pages/BuyPage';
+import CartPage from './pages/CartPage';
+import { CartProvider } from './context/CartContext';
 
 function App() {
   return (
     <>
-      <Booklist />
+      <CartProvider>
+        <Router>
+          <Routes>
+            <Route path="/" element={<BooksPage />} />
+            <Route path="/books" element={<BooksPage />} />
+            <Route path="/buy/:title/:bookId/:price" element={<BuyPage />} />
+            <Route path="/cart" element={<CartPage />} />
+          </Routes>
+        </Router>
+      </CartProvider>
     </>
   );
 }
