@@ -37,8 +37,16 @@ function BookList({ selectedCategories }: { selectedCategories: string[] }) {
         Sort by Title -- {sortOrder === 'asc' ? '🔼' : '🔽'}
       </button>
       {books.map((b) => (
-        <div id="projectCard" className="card" key={b.bookID}>
-          <h3 className="card-title">{b.title}</h3>
+        <div
+          id="projectCard"
+          className="card border-secondary mb-3"
+          key={b.bookID}
+        >
+          <div className="card-header">
+            <h3>
+              <strong>{b.title}</strong>
+            </h3>
+          </div>
           <div className="card-body">
             <ul className="list-unstyled">
               <li>
