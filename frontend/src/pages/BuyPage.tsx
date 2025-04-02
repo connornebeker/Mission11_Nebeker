@@ -8,17 +8,24 @@ function BuyPage() {
   const navigate = useNavigate();
   const { title, bookID, price } = useParams();
   const { addToCart } = useCart();
-  const [purchaseAmount, setPurchaseAmount] = useState<number>(0);
+  const [quantity, setQuantity] = useState<number>(1); // Default quantity to 1
+
+  const parsedPrice = price ? Number(price) : 0; // Ensure price is a number
+  const subtotal = parsedPrice * quantity; // Calculate subtotal dynamically
 
   const handleAddToCart = () => {
+    if (quantity < 1) return; // Prevent adding 0 or negative quantities
+
     const newItem: CartItem = {
       bookID: Number(bookID),
       title: title || 'No Book Found',
-      price: price ? Number(price) : 0, // Assuming price is not available here
-      purchaseAmount,
+      quantity: quantity,
+      price: parsedPrice,
+      subtotal: subtotal,
     };
+
     addToCart(newItem);
-    navigate('/cart');
+    navigate('/cart'); // Redirect to cart after adding item
   };
 
   return (
@@ -29,14 +36,15 @@ function BuyPage() {
       <div>
         <input
           type="number"
+          min="1"
           placeholder="Number of books"
-          value={price}
-          onChange={(x) => setPurchaseAmount(Number(x.target.value))}
+          value={quantity}
+          onChange={(e) => setQuantity(Number(e.target.value))}
         />
         <button onClick={handleAddToCart}>Add to Cart</button>
       </div>
 
-      <button onClick={() => navigate(-1)}>Go Back</button>
+      <button onClick={() => navigate(-1)}>Continue Shopping</button>
     </>
   );
 }
